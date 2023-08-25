@@ -43,3 +43,8 @@ def cambiar_panic(ataques):
         return 1
     else:
         return 0
+    
+
+def cargar_datos(ruta):
+    data = pd.read_csv(ruta, index_col=0)
+    return data

@@ -7,13 +7,16 @@ import joblib
 
 
 # Cargamos nuestro modelo anteriormente ya entrenado
-model = joblib.load('..\model\production\Random_Forest_Classifier_model_230820.pkl')
+model = joblib.load('..\model\production\Random_Forest_Classifier_model_230824.pkl')
+
 #Imagenes en linea
 imagen_ansiedad = 'https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2019/04/10/5fa51829b4517.r_d.496-279-0.jpeg'
 imagen_nivel_4 = 'https://www.holanuna.com/es/blog/wp-content/uploads/2021/09/Anxiety-infographic-ES.png'
 img_ans = 'https://www.clinicbarcelona.org/media/cache/960_jpeg/uploads/media/default/0001/11/5e2c024973095b7913c8e20603b94a19d34d0ad9.png'
+
 #Imagen modelo
 imagen_modelo = 'imagenes\mdc.jpg'
+
 #Funcion para cargar nuestros datasets
 @st.cache_data
 def cargar_datos(ruta):
@@ -22,6 +25,7 @@ def cargar_datos(ruta):
 
 
 
+#ESTRUCTURA PRINCIPAL DE NUESTRA APP
 def main():
 
 
@@ -152,9 +156,10 @@ El trastorno de ansiedad no implica solamente estar preocupado. También puede o
 
 
 
+#Seccion 4
 def render_section4():
 
-    model = joblib.load('..\model\production\Random_Forest_Classifier_model_230820.pkl')
+    model = joblib.load('..\model\production\Random_Forest_Classifier_model_230824.pkl')
 
     st.title("Comprobacion del nivel de ansiedad y su gravedad")
 
@@ -334,6 +339,8 @@ def render_section4():
 ''')
             st.write('Aqui te dejo una imagen con diferentes tecnicas tambien. Y recordarte que tu puedes con todo!')
             st.image(imagen_nivel_4, use_column_width=True)
+
+
 
 if __name__ == "__main__":
     main()
