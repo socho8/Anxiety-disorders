@@ -21,6 +21,5 @@ Para entrenar mi modelo utilice un modelo de Random Forest Classifier, aqui su m
 <image src="/src/app/imagenes/mdc.jpg">
 Tuvo una 'Precisión (Accuracy): 100.00%'.
 
-En conclusion podemos decir que el modelo funciono a la perfeccion.
+Espero que les guste, buena suerte!
 
-[DESCARGAR FUENTES]("src/utils/fuentes.txt")
