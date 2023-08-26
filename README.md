@@ -23,4 +23,4 @@ Tuvo una 'Precisión (Accuracy): 100.00%'.
 
 En conclusion podemos decir que el modelo funciono a la perfeccion.
 
-[DESCARGAR FUENTES]("/src/utils")
+[DESCARGAR FUENTES]("src/utils/fuentes.txt")
