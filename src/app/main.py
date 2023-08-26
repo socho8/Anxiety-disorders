@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 #from sklearn.ensemble import RandomForestClassifier
 import joblib
+import os
 
 
 #Imagenes en linea
@@ -11,13 +12,21 @@ imagen_nivel_4 = 'https://www.holanuna.com/es/blog/wp-content/uploads/2021/09/An
 img_ans = 'https://www.clinicbarcelona.org/media/cache/960_jpeg/uploads/media/default/0001/11/5e2c024973095b7913c8e20603b94a19d34d0ad9.png'
 
 #Imagen modelo
-imagen_modelo = 'imagenes\mdc.jpg'
+imagen_modelo = 'imagenes/mdc.jpg'
 
 #Funcion para cargar nuestros datasets
 @st.cache_data
-def cargar_datos(ruta):
-    data = pd.read_csv(ruta, index_col=0)
+def cargar_datos(nombre_archivo):
+    ruta_archivo = os.path.join("..", "data", nombre_archivo)
+    data = pd.read_csv(ruta_archivo, index_col=0)
     return data
+
+#FUNCION PARA CARGAR MODELO
+@st.cache_data
+def cargar_modelo(nombre_archivo):
+    ruta_modelo = os.path.join("..", "model","production", nombre_archivo)
+    modelo = joblib.load(ruta_modelo)
+    return modelo
 
 
 
@@ -96,15 +105,15 @@ Los medicamentos complementarios y alternativos son tratamientos que normalmente
 #Seccion 2
 def render_section2():
     st.title('Datasets y modelo utilizado')
-    
+
     st.subheader('Datasets')
     # Cargar el primer archivo CSV
-    dataset_original = cargar_datos("..\data\Data_junta.csv")
+    dataset_original = cargar_datos("Data_junta.csv")
     st.write("Primeros registros de la data original")
     st.dataframe(dataset_original.head())
 
     # Cargar el segundo archivo CSV
-    dataset_modificado = cargar_datos("..\Ansiedad_final.csv")
+    dataset_modificado = cargar_datos("Ansiedad_finalisima.csv")
     st.write("Primeros registros del dataset con su feature engineering ya realizado:")
     st.dataframe(dataset_modificado.head())
 
@@ -155,7 +164,7 @@ El trastorno de ansiedad no implica solamente estar preocupado. También puede o
 #Seccion 4
 def render_section4():
 
-    model = joblib.load('..\model\production\Random_Forest_Classifier_model_230824.pkl')
+    model = cargar_modelo("Random_Forest_Classifier_model_230824.pkl")
 
     st.title("Comprobacion del nivel de ansiedad y su gravedad")
 
