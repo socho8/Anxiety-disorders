@@ -15,14 +15,14 @@ img_ans = 'https://www.clinicbarcelona.org/media/cache/960_jpeg/uploads/media/de
 imagen_modelo = 'imagenes/mdc.jpg'
 
 #Funcion para cargar nuestros datasets
-@st.cache_data
+#@st.cache_data
 def cargar_datos(nombre_archivo):
     ruta_archivo = os.path.join("..", "data", nombre_archivo)
     data = pd.read_csv(ruta_archivo, index_col=0)
     return data
 
 #FUNCION PARA CARGAR MODELO
-@st.cache_data
+#@st.cache_data
 def cargar_modelo(nombre_archivo):
     ruta_modelo = os.path.join("..", "model","production", nombre_archivo)
     modelo = joblib.load(ruta_modelo)
