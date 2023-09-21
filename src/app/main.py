@@ -6,7 +6,7 @@ import pickle
 
 
 # Cargamos nuestro modelo anteriormente ya entrenado
-with open('../model/production/modelo_listo.pkl', 'rb') as archivo:
+with open('..\model\production\modelo_listo.pkl', 'rb') as archivo:
         model = pickle.load(archivo)
 
 #Imagenes en linea
@@ -159,8 +159,8 @@ El trastorno de ansiedad no implica solamente estar preocupado. También puede o
 #Seccion 4
 def render_section4():
 
-    with open('../model/production/modelo_listo.pkl', 'rb') as archivo:
-        model = pickle.load(archivo)
+    # with open('../model/production/modelo_listo.pkl', 'rb') as archivo:
+    #     model = pickle.load(archivo)
 
     st.title("Comprobacion del nivel de ansiedad y su gravedad")
 
