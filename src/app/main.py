@@ -6,7 +6,7 @@ import pickle
 
 
 # Cargamos nuestro modelo anteriormente ya entrenado
-with open('..\model\production\modelo_listo.pkl', 'rb') as archivo:
+with open('..\\mode\\production\\modelo_listo.pkl', 'rb') as archivo:
         model = pickle.load(archivo)
 
 #Imagenes en linea
@@ -192,7 +192,7 @@ def render_section4():
 
 
         # Realizar la predicción
-    if st.button('Realizar prediccion'):
+    if st.button('Realizar prediccion' ):
         input_data = np.array([[edad, genero_num, antecedentes_num, nivel_estres_num, sintomas_num, severidad_num, impacto_vida_num, apoyo_social_num]])
         prediction = model.predict(input_data)
         prediction = int(prediction)
