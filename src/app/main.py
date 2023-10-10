@@ -7,7 +7,10 @@ import joblib
 
 # Cargamos nuestro modelo anteriormente ya entrenado
 # @st.cache_data
-modelo = joblib.load('src/app/KNN.pkl')
+modelo = joblib.load('KNN.pkl')
+
+# with open('..\src\model\production\KNN.pkl', 'rb') as archivo:
+#     modelo = joblib.load(archivo)
 
 #Imagenes en linea
 imagen_ansiedad = 'https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2019/04/10/5fa51829b4517.r_d.496-279-0.jpeg'
@@ -103,7 +106,7 @@ def render_section2():
     
     st.subheader('Datasets')
     # Cargar el primer archivo CSV
-    dataset_original = cargar_datos("../data/Data_junta.csv")
+    dataset_original = cargar_datos("Data_junta.csv")
     st.write("Primeros registros de la data original")
     st.dataframe(dataset_original.head())
 
