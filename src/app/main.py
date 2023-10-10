@@ -159,8 +159,13 @@ El trastorno de ansiedad no implica solamente estar preocupado. También puede o
 
 #Seccion 4
 def render_section4():
-    
-    modelo = joblib.load('KNN.pkl')
+
+    try:
+        modelo = joblib.load('KNN.pkl')
+    except FileNotFoundError:
+        st.error("El archivo KNN.pkl no se encontró.")
+    except Exception as e:
+        st.error(f"Se produjo un error al cargar el modelo: {str(e)}")
 
     st.title("Comprobacion del nivel de ansiedad y su gravedad")
 
