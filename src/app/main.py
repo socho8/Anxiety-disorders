@@ -1,12 +1,11 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-#import joblib
-import pickle
+import joblib
+
 
 # Cargar el modelo previamente guardado
-with open('KNN.pkl', 'rb') as file:
-    modelo = pickle.load(file)
+modelo = joblib.load('KNN.pkl')
 
 # Realizar otras operaciones con el modelo cargado si es necesario
 
