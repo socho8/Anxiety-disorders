@@ -9,7 +9,7 @@ import joblib
 # @st.cache_data
 #modelo = joblib.load('KNN.pkl')
 
-with open('KNN.pkl', 'rb') as archivo:
+with open('KNN.pkl') as archivo:
     modelo = joblib.load(archivo)
 
 #Imagenes en linea
