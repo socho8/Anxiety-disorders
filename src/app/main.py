@@ -16,7 +16,7 @@ imagen_nivel_4 = 'https://www.holanuna.com/es/blog/wp-content/uploads/2021/09/An
 img_ans = 'https://www.clinicbarcelona.org/media/cache/960_jpeg/uploads/media/default/0001/11/5e2c024973095b7913c8e20603b94a19d34d0ad9.png'
 
 #Imagen modelo
-imagen_modelo = 'imagenes\mdc.jpg'
+imagen_modelo = 'src/app/imagenes/mdc.jpg'
 
 #Funcion para cargar nuestros datasets
 @st.cache_data
@@ -104,12 +104,12 @@ def render_section2():
     
     st.subheader('Datasets')
     # Cargar el primer archivo CSV
-    dataset_original = cargar_datos("Data_junta.csv")
+    dataset_original = cargar_datos("src/data/Data_junta.csv")
     st.write("Primeros registros de la data original")
     st.dataframe(dataset_original.head())
 
     # Cargar el segundo archivo CSV
-    dataset_modificado = cargar_datos("../data/Ansiedad_final.csv")
+    dataset_modificado = cargar_datos("src/data/Ansiedad_final.csv")
     st.write("Primeros registros del dataset con su feature engineering ya realizado:")
     st.dataframe(dataset_modificado.head())
 
@@ -161,9 +161,9 @@ El trastorno de ansiedad no implica solamente estar preocupado. También puede o
 def render_section4():
 
     try:
-        modelo = joblib.load('neig.pkl')
+        modelo = joblib.load('src/app/neig.pkl')
     except FileNotFoundError:
-        st.error("El archivo KNN.pkl no se encontró.")
+        st.error("El archivo neig.pkl no se encontró.")
     except Exception as e:
         st.error(f"Se produjo un error al cargar el modelo: {str(e)}")
 
