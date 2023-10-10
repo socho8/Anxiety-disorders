@@ -6,7 +6,8 @@ import joblib
 
 
 # Cargamos nuestro modelo anteriormente ya entrenado
-modelo = joblib.load('KNN.pkl')
+# @st.cache_data
+modelo = joblib.load('src/app/KNN.pkl')
 
 #Imagenes en linea
 imagen_ansiedad = 'https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2019/04/10/5fa51829b4517.r_d.496-279-0.jpeg'
