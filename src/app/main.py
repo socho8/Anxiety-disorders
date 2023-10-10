@@ -1,13 +1,12 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import pickle
+import joblib
 
 
 
 # Cargamos nuestro modelo anteriormente ya entrenado
-with open('..\\mode\\production\\modelo_listo.pkl', 'rb') as archivo:
-        model = pickle.load(archivo)
+modelo = joblib.load('KNN.pkl')
 
 #Imagenes en linea
 imagen_ansiedad = 'https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2019/04/10/5fa51829b4517.r_d.496-279-0.jpeg'
@@ -194,7 +193,7 @@ def render_section4():
         # Realizar la predicción
     if st.button('Realizar prediccion' ):
         input_data = np.array([[edad, genero_num, antecedentes_num, nivel_estres_num, sintomas_num, severidad_num, impacto_vida_num, apoyo_social_num]])
-        prediction = model.predict(input_data)
+        prediction = modelo.predict(input_data)
         prediction = int(prediction)
 
         # Mostrar resultados
