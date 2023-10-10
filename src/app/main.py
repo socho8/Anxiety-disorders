@@ -1,16 +1,15 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import joblib
+#import joblib
+import pickle
 
+# Cargar el modelo previamente guardado
+with open('KNN.pkl', 'rb') as file:
+    modelo = pickle.load(file)
 
+# Realizar otras operaciones con el modelo cargado si es necesario
 
-# Cargamos nuestro modelo anteriormente ya entrenado
-# @st.cache_data
-modelo = joblib.load('KNN.pkl')
-
-# with open('KNN.pkl') as archivo:
-#     modelo = joblib.load(archivo)
 
 #Imagenes en linea
 imagen_ansiedad = 'https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2019/04/10/5fa51829b4517.r_d.496-279-0.jpeg'
