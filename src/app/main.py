@@ -5,7 +5,7 @@ import joblib
 
 
 # Cargar el modelo previamente guardado
-modelo = joblib.load('KNN.pkl')
+# modelo = joblib.load('KNN.pkl')
 
 # Realizar otras operaciones con el modelo cargado si es necesario
 
@@ -159,9 +159,8 @@ El trastorno de ansiedad no implica solamente estar preocupado. También puede o
 
 #Seccion 4
 def render_section4():
-
-    # with open('../model/production/modelo_listo.pkl', 'rb') as archivo:
-    #     model = pickle.load(archivo)
+    
+    modelo = joblib.load('KNN.pkl')
 
     st.title("Comprobacion del nivel de ansiedad y su gravedad")
 
