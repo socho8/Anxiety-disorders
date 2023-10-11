@@ -25,15 +25,14 @@ def cargar_datos(ruta):
     return data
 
 
-st.set_page_config( 
-    page_title="La ansiedad y su lado oculto", 
-    page_icon="	:mending_heart:", 
-    layout="centered") 
-
 #ESTRUCTURA PRINCIPAL DE NUESTRA APP
 def main():
 
-
+    st.set_page_config( 
+    page_title="La ansiedad y su lado oculto", 
+    page_icon="	:mending_heart:", 
+    layout="centered") 
+    
     st.sidebar.title("Secciones")
     section = st.sidebar.radio("", ["Introduccion", "Data y modelo", "¿Sabias que?", "Prediccion"])
 
