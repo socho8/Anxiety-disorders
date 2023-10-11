@@ -16,7 +16,7 @@ imagen_nivel_4 = 'https://www.holanuna.com/es/blog/wp-content/uploads/2021/09/An
 img_ans = 'https://www.clinicbarcelona.org/media/cache/960_jpeg/uploads/media/default/0001/11/5e2c024973095b7913c8e20603b94a19d34d0ad9.png'
 
 #Imagen modelo
-imagen_modelo = 'src/app/imagenes/mdc.jpg'
+imagen_modelo = 'src/app/imagenes/mdcc.jpg'
 
 #Funcion para cargar nuestros datasets
 @st.cache_data
@@ -103,6 +103,9 @@ def render_section2():
     st.title('Datasets y modelo utilizado')
     
     st.subheader('Datasets')
+    st.markdown('''Para este proyecto saque el dataset de kaggle y le aplique un feauture engineering para poder trabajarlo correctamente.
+                Aqui podemos verlo''')
+
     # Cargar el primer archivo CSV
     dataset_original = cargar_datos("src/data/Data_junta.csv")
     st.write("Primeros registros de la data original")
@@ -113,9 +116,10 @@ def render_section2():
     st.write("Primeros registros del dataset con su feature engineering ya realizado:")
     st.dataframe(dataset_modificado.head())
 
+
     st.subheader('Modelo')
     st.markdown('Para este proyecto utilice un modelo de **Random Forest Classifier**')
-    st.write('Precisión (Accuracy): 100.00%')
+    st.write('Precisión (Accuracy): 97%')
     st.image(imagen_modelo, use_column_width=True)
 
 
@@ -161,7 +165,7 @@ El trastorno de ansiedad no implica solamente estar preocupado. También puede o
 def render_section4():
 
     try:
-        modelo = joblib.load('src/app/neig.pkl')
+        modelo = joblib.load('src/model/production/knn.pkl')
     except FileNotFoundError:
         st.error("El archivo neig.pkl no se encontró.")
     except Exception as e:
