@@ -25,6 +25,10 @@ def cargar_datos(ruta):
     return data
 
 
+st.set_page_config( 
+    page_title="La ansiedad y su lado oculto", 
+    page_icon="	:mending_heart:", 
+    layout="centered") 
 
 #ESTRUCTURA PRINCIPAL DE NUESTRA APP
 def main():
