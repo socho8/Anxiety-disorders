@@ -118,7 +118,7 @@ def render_section2():
 
 
     st.subheader('Modelo')
-    st.markdown('Para este proyecto utilice un modelo de **Random Forest Classifier**')
+    st.markdown('Para este proyecto utilice un modelo de **KNN Classifier**')
     st.write('Precisión (Accuracy): 97%')
     st.image(imagen_modelo, use_column_width=True)
 
