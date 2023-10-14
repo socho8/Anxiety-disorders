@@ -18,7 +18,7 @@ Por ello con este trabajo me gustaria poder ayudar a la gente a tratar los sinto
 Los datos utilizados fueron sacados desde Kaggle: [Panic atack disorder](https://www.kaggle.com/datasets/muhammadshahidazeem/panic-disorder-detection-dataset)
 
 Para entrenar mi modelo utilice un modelo de  KNN Classifier, aqui su matriz de confusion:
-<image src="/src/app/imagenes/mdc.jpg">
+<image src="/src/app/imagenes/mdcc.jpg">
 Tuvo una 'Precisión (Accuracy): 97.00%'.
 
 Espero que les guste, buena suerte!
